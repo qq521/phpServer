@@ -21,7 +21,7 @@ foreach ($dataArray as $key => $value) {
 
   $sql = "INSERT INTO MyGuests (my_id,my_title,my_userName,my_pwd,my_loginURL) VALUES (".$value["loginId"].",'".$value["title"]."','".$value["userName"]."','".$value["password"]."','".$value["loginURL"]."') ";
 
-  $updateSql = " ON DUPLICATE KEY UPDATE my_title = 'qwe' ';";
+  $updateSql = " ON DUPLICATE KEY UPDATE my_title = 'qwe';";
 
   $totalSQL =$sql.$updateSql;
   echo $totalSQL;
