@@ -17,7 +17,7 @@ $dbInfo = $obj["dbInfo"];
 
   $sql = "SELECT my_id,my_title,my_userName,my_pwd,my_loginURL FROM MyGuests ;";
   $result = $conn->query($sql);
-  echo json_encode($result);
+  echo json_encode($result->num_rows);
 
  $conn->close();
  ?>
