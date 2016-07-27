@@ -15,7 +15,7 @@ $dbInfo = $obj["dbInfo"];
      die("打开失败: " . $conn->connect_error);
  }
 
-  $sql = "SELECT * FROM MyGuests ;";
+  $sql = "SELECT my_id,my_title,my_userName,my_pwd,my_loginURL FROM MyGuests ;";
   $result = $conn->query($sql);
   echo json_encode($result);
 
