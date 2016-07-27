@@ -15,7 +15,7 @@ $dbInfo = $obj["dbInfo"];
      die("打开失败: " . $conn->connect_error);
  }
 
-  $sql = "SELECT * FROM 'MyGuests' ORDER BY 'MyGuests'.'my_id' ASC LIMIT 0, 30 ;";
+  $sql = "SELECT * FROM MyGuests ;";
   $result = $conn->query($sql);
   echo json_encode($result);
 
