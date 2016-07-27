@@ -19,7 +19,7 @@ $dbInfo = $obj["dbInfo"];
 foreach ($dataArray as $key => $value) {
 
 
-  $sql = "INSERT INTO MyGuests (my_title,my_userName,my_pwd,my_loginURL) VALUES ('".$value["title"]."','".$value["userName"]."','".$value["password"]."','".$value["loginURL"]."') ON DUPLICATE KEY UPDATE my_id = '".$value["loginId"]."';";
+  $sql = "INSERT INTO MyGuests (my_id,my_title,my_userName,my_pwd,my_loginURL) VALUES ('".$value["loginId"]."','".$value["title"]."','".$value["userName"]."','".$value["password"]."','".$value["loginURL"]."') ON DUPLICATE KEY UPDATE my_id = '".$value["loginId"]."';";
   echo $sql;
   $result = $conn->query($sql);
   echo $result;
