@@ -17,12 +17,12 @@ $dbInfo = $obj["dbInfo"];
 
   $sql = "SELECT my_id,my_title,my_userName,my_pwd,my_loginURL FROM MyGuests ;";
   $result = $conn->query($sql);
-
+  $arr = array();
   while ($row = mysqli_fetch_assoc($result))
   {
-    echo "question_title : {$row['my_id']} <br>";
+    $array_push($row);
   }
-  echo json_encode($result->num_rows);
+  echo json_encode($arr);
 
  $conn->close();
  ?>
