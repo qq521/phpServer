@@ -17,6 +17,11 @@ $dbInfo = $obj["dbInfo"];
 
   $sql = "SELECT my_id,my_title,my_userName,my_pwd,my_loginURL FROM MyGuests ;";
   $result = $conn->query($sql);
+
+  while ($row = mysqli_fetch_assoc($result))
+  {
+    echo "question_title : {$row['my_id']} <br>";
+  }
   echo json_encode($result->num_rows);
 
  $conn->close();
