@@ -17,16 +17,20 @@ $dbInfo = $obj["dbInfo"];
  }
 
 foreach ($dataArray as $key => $value) {
-
-
   $sql = "INSERT INTO MyGuests (my_id,my_title,my_userName,my_pwd,my_loginURL) VALUES (".$value["loginId"].",'".$value["title"]."','".$value["userName"]."','".$value["password"]."','".$value["loginURL"]."') ";
 
   $updateSql = " ON DUPLICATE KEY UPDATE my_title = '".$value["title"]."',my_userName = '".$value["userName"]."',my_pwd = '".$value["password"]."',my_loginURL = '".$value["loginURL"]."';";
 
   $totalSQL =$sql.$updateSql;
-  echo $totalSQL;
+
   $result = $conn->query($totalSQL);
-  echo $result;
+  if ($result == false) {
+    $response = array ("succeed"=>0);
+    echo json_encode($response);
+    return;
+  }
 }
+$response = array ("succeed"=>1);
+echo json_encode($response);
  $conn->close();
  ?>

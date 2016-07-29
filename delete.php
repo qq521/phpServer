@@ -19,8 +19,14 @@ $dbname = $dbInfo["dbname"];
 foreach ($dataArray as $key => $value) {
   $sql = "DELETE FROM MyGuests WHERE my_id = " .$value;
   $result = $conn->query($sql);
-  echo json_encode($result);
+  if ($result == false) {
+    $response = array ("succeed"=>0);
+    echo json_encode($response);
+    return;
+  }
 }
 
+$response = array ("succeed"=>1);
+echo json_encode($response);
  $conn->close();
  ?>

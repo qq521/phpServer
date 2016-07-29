@@ -17,13 +17,19 @@ $dbInfo = $obj["dbInfo"];
 
   $sql = "SELECT my_id,my_title,my_userName,my_pwd,my_loginURL FROM MyGuests ;";
   $result = $conn->query($sql);
+  if ($result == false) {
+    $response = array ("succeed"=>0);
+    echo json_encode($response);
+    return;
+  }
   $resultArr = array();
   while ($row = mysqli_fetch_assoc($result))
   {
     $array = is_object($row) ? get_object_vars($obj) : $row;
     array_push($resultArr,$array);
   }
-  echo json_encode($resultArr);
+  $response = array ("succeed" => 1,"infoList"=>$resultArr);
+  echo json_encode($response);
 
  $conn->close();
  ?>
