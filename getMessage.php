@@ -9,10 +9,10 @@ $dbInfo = $obj["dbInfo"];
  $password = $dbInfo["password"];
  $dbname = $dbInfo["dbname"];
 
- $conn = new mysqli($servername, $username, $password, $dbname);
+ $conn = new mysqli($servername, "u849025525_mydb", "qq1314521", "u849025525_mydb");
 
  if ($conn->connect_error) {
-   echo "$obj";
+      echo "$obj";
      die("打开失败: " . $conn->connect_error);
  }
 
