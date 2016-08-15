@@ -9,10 +9,10 @@ $dbInfo = $obj["dbInfo"];
  $password = $dbInfo["password"];
  $dbname = $dbInfo["dbname"];
 
- $conn = new mysqli($servername, "u849025525_mydb", "qq1314521", "u849025525_mydb");
+ $conn = new mysqli($servername, $username, $password, $dbname);
 
  if ($conn->connect_error) {
-      echo json_encode($dbInfo);
+   echo json_encode($dbInfo);
      die("打开失败: " . $conn->connect_error);
  }
 
