@@ -10,9 +10,9 @@ $dbInfo = $obj["dbInfo"];
  $dbname = $dbInfo["dbname"];
 
  $conn = new mysqli($servername, $username, $password, $dbname);
-
+ echo json_encode($dbInfo);
  if ($conn->connect_error) {
-   echo json_encode($dbInfo);
+
      die("打开失败: " . $conn->connect_error);
  }
 
