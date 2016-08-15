@@ -8,7 +8,7 @@ $dbInfo = json_decode($postData,true);
  $username = $dbInfo["username"];
  $password = $dbInfo["password"];
  $dbname = $dbInfo["dbname"];
-
+ echo json_encode($dbInfo);
  $conn = new mysqli($servername, $username, $password, $dbname);
 
  if ($conn->connect_error) {
