@@ -12,6 +12,7 @@ $dbInfo = $obj["dbInfo"];
  $conn = new mysqli($servername, $username, $password, $dbname);
 
  if ($conn->connect_error) {
+   echo "$obj";
      die("打开失败: " . $conn->connect_error);
  }
 

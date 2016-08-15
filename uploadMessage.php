@@ -19,10 +19,7 @@ $dbInfo = $obj["dbInfo"];
 foreach ($dataArray as $key => $value) {
   $sql = "INSERT INTO MessageList (id,content) VALUES ($value[messageId],'$value[content]');";
 
-
-
   $totalSQL =$sql;
-
   $result = $conn->query($totalSQL);
   if ($result == false) {
     $response = array ("succeed"=>0,"sql"=>$totalSQL);
