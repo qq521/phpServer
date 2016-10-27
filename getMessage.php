@@ -1,8 +1,8 @@
 <?php
 header('content-type:text/json');
 $postData =  file_get_contents("php://input");
-$obj = json_decode($postData,true);
-$dbInfo = $obj["dbInfo"];
+$inputObj = json_decode($postData,true);
+$dbInfo = $inputObj["dbInfo"];
 
 
  $servername = $dbInfo["servername"];
